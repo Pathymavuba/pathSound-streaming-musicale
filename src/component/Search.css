@@ -3,4 +3,13 @@
 }
 .searchBar input{
     font-size:1.2rem;
+    padding:.5rem 1rem;
+}
+.search_results{
+    width:100%;
+}
+.search_result{
+    border:1px solid #eee;
+    margin:.4rem 1rem;
+    padding:.4rem;
 }
