@@ -1,9 +1,16 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useState } from 'react'
 import './Search.css'
 
 const Search = () => {
     const [data,setData]=useState([])
+    useEffect(()=>{
+        fetch('https://jsonplaceholder.typicode.com/posts')
+       .then(response => response.json())
+       .then(json =>setData(json))
+    },[])
+    console.log(data);
   return (
     <>
      <div className='searchBar'>
@@ -14,7 +21,10 @@ const Search = () => {
         placeholder='Rechercher' />
     </div>
     <div className='search_results'>
-        <div className='search_result'>donnée</div>
+        {data.map((posts)=>{
+            return <div className='search_result' key={posts.id}>{posts.title}</div>
+        })}
+        
     </div>
     </>
    
