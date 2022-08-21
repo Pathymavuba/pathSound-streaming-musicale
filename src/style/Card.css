@@ -1,0 +1,17 @@
+
+.card{
+    border: 1px solid black;
+    width:13rem;
+    height:10rem;
+    border-radius:10px;
+    background-size:cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+}
+.playnow{
+    font-size:3rem;
+    position: relative;
+    left:4.5rem;
+    top:3.5rem;
+    /* display: none; */
+}

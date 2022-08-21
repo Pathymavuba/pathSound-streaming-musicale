@@ -1,0 +1,12 @@
+.accueil{
+    display:flex;
+    flex-direction:row;
+    width:100vw;
+    height:100vh;
+    /* flex-wrap: wrap; */
+}
+/* .play{
+    position: absolute;
+    top:10rem;
+    width:2px;
+} */

@@ -1,0 +1,52 @@
+*{
+  color:white;
+}
+:root{
+    --bleu:#0000FF;
+}
+.container{
+    background:url('/home/pathymavuba/Documents/Pathsound/src/img/unsplash_YrtFlrLo2DQ.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    width:100vw;
+    height:100vh;
+    position: relative;
+}
+.secondary-container{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#030303;
+    opacity:0.8;
+    display:flex;
+    flex-direction:column;
+    gap:9rem;
+}
+p{
+    font-size:2.5rem;
+    text-align: center;
+}
+.description{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+    justify-content: center;
+    align-items:center;
+}
+.logo{
+    display:flex;
+    flex-direction:row;
+    gap:0;
+}
+button{
+    width:12rem;
+    height:3rem;
+    color:white;
+    background-color:var(--bleu);
+    font-size:1rem;
+    font-weight:800;cursor: pointer;
+
+}

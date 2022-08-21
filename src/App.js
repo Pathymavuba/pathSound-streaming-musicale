@@ -1,9 +1,16 @@
 import './App.css';
-import Search from './component/Search';
+import ConnexionPage from './component/ConnexionPage';
+import {Routes,Route} from 'react-router-dom'
+import AccueilPage from './component/AccueilPage';
+
 function App() {
+ 
   return (
     <div className="App">
-      <Search />
+       <Routes>
+        <Route  path='/' element={<ConnexionPage />}/>
+        <Route path='/accueil' element={<AccueilPage />}/>
+       </Routes>
     </div>
   );
 }
