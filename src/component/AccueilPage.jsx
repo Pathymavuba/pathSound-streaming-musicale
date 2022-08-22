@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect,useContext} from 'react'
+import { useState, useEffect,useContext,useRef} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import SpotifyWebAPi from 'spotify-web-api-js'
@@ -8,6 +8,9 @@ import Mainsection from './Mainsection'
 import Rightsection from './Rightsection'
 import '/home/pathymavuba/Documents/Pathsound/src/component/AccurilPage.css'
 import {ObjetUsContext} from './OjetUseContext'
+import Album from './Album'
+import Cardsearch from './Cardsearch'
+import Research from './Research'
 
 
 
@@ -38,10 +41,15 @@ const AccueilPage = () => {
   const [artistName,setArtistName] = useState([])
   const [albumImage,setAlbumImage]=useState([])
   const [newsong,setNewsong]=useState([])
-  const [recommandedSong,setRecommandedSong]=useState([])
+  const [newalbum,setNewalbum]=useState([])
+  const [initial,setInitial]=useState(true)
+  
+
+  spotify.setAccessToken(token) 
+
   useEffect(()=>{
     setTimeout(()=>{
-      spotify.setAccessToken(token) 
+      
       //definition du jeton d'accès 
   spotify.getMe().then((res)=>{
       // console.log(res);
@@ -58,19 +66,28 @@ const AccueilPage = () => {
       // console.log(res);
       // setNewsong(res.albums.items[0].artists[0].name)
       setNewsong(res.albums.items)
+      setNewalbum(res.albums)
     })
-    spotify.getMySavedTracks().then(res=>{
+    spotify.getAlbums().then((res)=>{
       console.log(res);
-      setRecommandedSong(res)
-    })
-    },3000)
+     })
+    
+  
+   
+    },2000)
 
 
   },[token])
   // console.log(profil);
   // console.log(artistName);
-  // console.log(newsong);
-  console.log(recommandedSong);
+  console.log(newalbum);
+  const inputRef = useRef() 
+ 
+  const researchEvent = ()=>{
+    setInitial(!initial)
+    
+  }
+ 
   
   //se deconnecter
   const logout = () => {
@@ -82,10 +99,12 @@ const AccueilPage = () => {
     <div>
       <div className='accueil'>
       {/* <Link to='/'><button onClick={logout}>Se deconnecter</button> </Link> */}
-      <Leftsection  logout={logout} profil={profil} name={name} />
+      <Leftsection  logout={logout} profil={profil} name={name} token={token} researchEvent={researchEvent}/>
       {/* <Mainsection artistName={artistName}/> */}
-      <ObjetUsContext.Provider value={{artistName,albumImage,newsong,token}}>
-      <Mainsection  />
+      <ObjetUsContext.Provider value={{artistName,newsong,token,logout,profil,name,spotify}}>
+      {initial?<Mainsection/>:<Research />}
+      {/* <Mainsection /> */}
+      {/* <Research /> */}
       </ObjetUsContext.Provider>
       <Rightsection />
 

@@ -6,16 +6,23 @@ import Cardrecentlyplayed from './Cardrecentlyplayed'
 import { useState } from 'react'
 import { ObjetUsContext } from './OjetUseContext'
 import CardRecommandation from './CardRecommandation'
-// import SpotifyPlayer from 'react-spotify-web-playback';
+import { useNavigate } from 'react-router-dom'
+
 
 
 
 const Mainsection = () => {
-  const {artistName,newsong,token} = useContext(ObjetUsContext)
+  const {artistName,newsong,token,spotify} = useContext(ObjetUsContext)
   const [seemoremadeforyou,setSeemoremadeforyou]=useState(true)
   const [seemorerecentlyplayed,setSeemorerecentlyplayed]=useState(true)
+  const navigate = useNavigate()
+  
+
   
   
+ 
+ 
+
 const handleSeemoremadeforyou = ()=>{
   setSeemoremadeforyou(!seemoremadeforyou)
 }
@@ -24,9 +31,9 @@ const handleSeemorerecentlyplayed = ()=>{
 }
   return (
     <div className='mainmenu'>
-      <div className="menu">
-          <input type="search" className='search' placeholder='search'/>
-      </div>
+      {/* <div className="menu">
+          <input onChange={searchTracks} type="search" className='search' placeholder='search'/>
+      </div> */}
       <div className="allSongs">
       <div className="madeforyou">
         <h1 style={{fontWeight:'400'}}>MADE FOR YOU</h1>
@@ -57,42 +64,11 @@ const handleSeemorerecentlyplayed = ()=>{
         })} 
           </div>
         </div>
-        <div className="recommanded">
-          <h1 style={{fontWeight:'400'}}>RECOMMANDED</h1>
-          <span style={{marginLeft:'53rem',cursor:'pointer'}}  >See more...</span>
-          <div className="listsongs">
-           <CardRecommandation />
-          </div>
-        </div>
-        <div className="playlists">
-          <h1 style={{fontWeight:'400'}}>PLAYLISTS</h1>
-          <span style={{marginLeft:'53rem',cursor:'pointer'}}  >See more...</span>
-          <div className="listsongs">
-          <Cardplaylist  />
-          <Cardplaylist />
-          <Cardplaylist />
-          <Cardplaylist />
-          
-          </div>
-        </div>
-       
+     
 
       </div>
       
-      {/* <SpotifyPlayer   styles={{
-    activeColor: '#fff',
-    bgColor: '#333',
-    color: '#fff',
-    loaderColor: '#fff',
-    sliderColor: '#1cb954',
-    trackArtistColor: '#ccc',
-    trackNameColor: '#fff',
-    width:'3px',
-    height:'5rem',
-  }}
-  token={token}
-  uris={['spotify:artist:6HQYnRM4OzToCYPpVBInuU']}
-/>; */}
+    
   
     
     </div>
