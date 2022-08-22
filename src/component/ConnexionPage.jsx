@@ -37,8 +37,8 @@ const ConnexionPage = () => {
       <div className="secondary-container">
         <div className="logo">
           <img src={Logo} alt="logo" />
-          <h3 style={{ marginTop: '2.6rem', fontSize: '2rem', fontWeight: '400' }}
-          >path<span style={{ color: '#0000FF' }}>Sound</span></h3>
+          <h3 style={{ marginTop:'2.6rem', fontSize:'2rem', fontWeight:'400' }}
+          >path<span style={{color:'#0000FF'}}>Sound</span></h3>
         </div>
         <div className='description'>
           <p>Discover, stream  a constantly expanding mix of music <br />

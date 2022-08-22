@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { ObjetUsContext } from './OjetUseContext'
 // import SpotifyPlayer from 'react-spotify-web-playback';
 
-const Leftsection = ({logout,profil,name,researchEvent,token}) => {
+const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent}) => {
   
   return (
     <div className='leftmenu'>
@@ -19,7 +19,7 @@ const Leftsection = ({logout,profil,name,researchEvent,token}) => {
         <div className="library">
             <div className='yourlibrary'>
             <h3 style={{fontSize:'1.4rem'}}>YOUR LIBRARY</h3>
-             <h6 >Home</h6>
+              <h6 onClick={homeEvent}>Home</h6>
              <h6  onClick={researchEvent}>Research</h6>
             <h6 >Album</h6>
              <h6>Liked Songs</h6>

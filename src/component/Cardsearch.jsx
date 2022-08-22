@@ -1,12 +1,17 @@
 import React from 'react'
 import '/home/pathymavuba/Documents/Pathsound/src/style/Card.css'
+import { useState } from 'react'
+import {BsFillPlayCircleFill } from "react-icons/bs";
 
 const Cardsearch = ({imagealbum,titretrack,artist}) => {
+  const [showplay,setShowplay] = useState(false)
+  const handleShowplay=()=>{setShowplay(true)}
+  const handleHideplay=()=>{setShowplay(false)}
   return (
     <div>
 
 <div className='card'>
-    <div className='card'
+    <div className='card' onMouseEnter={handleShowplay} onMouseLeave={handleHideplay}
 style={{backgroundImage:`url(${imagealbum})`}}>
         <h6 style={{
            fontSize:'.7rem',
@@ -18,6 +23,7 @@ style={{backgroundImage:`url(${imagealbum})`}}>
            position:'relative',
            top:'11rem',}}
         >{artist}</h6>
+        <span className='playnow' > {showplay && <BsFillPlayCircleFill  />}</span>
      
         
 </div>
