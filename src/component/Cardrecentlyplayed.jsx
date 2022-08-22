@@ -4,7 +4,7 @@ import {BsFillPlayCircleFill } from "react-icons/bs";
 
 
 
-const Cardrecentlyplayed = ({image,monartiste,titre}) => {
+const Cardrecentlyplayed = ({image,monartiste,titre,playTrack}) => {
     const [showplay,setShowplay] = useState(false)
     const handleShowplay=()=>{setShowplay(true)}
     const handleHideplay=()=>{setShowplay(false)}
@@ -27,7 +27,7 @@ const Cardrecentlyplayed = ({image,monartiste,titre}) => {
                 position:'relative',
                 top:'11rem',}}
              >{monartiste}</h6>
-             <span className='playnow' onClick={handleplay} style={{cursor:'pointer'}}> {showplay && <BsFillPlayCircleFill />}</span>
+             <span className='playnow' onClick={playTrack} style={{cursor:'pointer'}}> {showplay && <BsFillPlayCircleFill />}</span>
 
     </div>
       

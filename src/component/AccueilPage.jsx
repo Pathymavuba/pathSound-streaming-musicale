@@ -45,13 +45,12 @@ const AccueilPage = () => {
   const [initial, setInitial] = useState(true)
   const [backhome, setBackhome] = useState(false)
   const [trackuri,setTrackuri]=useState("")
-
+  console.log(trackuri);
 
   spotify.setAccessToken(token)
 
   useEffect(() => {
     setTimeout(() => {
-
       //definition du jeton d'accès 
       spotify.getMe().then((res) => {
         // console.log(res);
@@ -66,14 +65,13 @@ const AccueilPage = () => {
 
       spotify.getNewReleases().then((res) => {
         // console.log(res);
-        // setNewsong(res.albums.items[0].artists[0].name)
         setNewsong(res.albums.items)
-        setNewalbum(res.albums)
+        //  console.log("nouveau",res.albums.items);
+
       })
       spotify.getAlbums().then((res) => {
-        console.log(res);
+        // console.log(res);
       })
-
 
 
     }, 2000)
@@ -82,8 +80,7 @@ const AccueilPage = () => {
   }, [token])
   // console.log(profil);
   // console.log(artistName);
-  console.log(newalbum);
-  const inputRef = useRef()
+  // console.log(newalbum);
 
   const researchEvent = () => {
     setInitial(!initial)
@@ -93,12 +90,10 @@ const AccueilPage = () => {
     setBackhome(!backhome)
   }
 
-
   //se deconnecter
   const logout = () => {
     setToken("")
     window.localStorage.removeItem("token")
-    console.log('maman');
   }
   return (
     <div >
@@ -106,7 +101,7 @@ const AccueilPage = () => {
         {/* <Link to='/'><button onClick={logout}>Se deconnecter</button> </Link> */}
         <Leftsection logout={logout} profil={profil} name={name} token={token} researchEvent={researchEvent} />
         {/* <Mainsection artistName={artistName}/> */}
-        <ObjetUsContext.Provider value={{ artistName, newsong, token, logout, profil, name, spotify }}>
+        <ObjetUsContext.Provider value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri}}>
           {initial ? <Mainsection /> : <Research />}
           {/* {backhome & <Mainsection/>} */}
           {/* <Routes>
@@ -124,13 +119,13 @@ const AccueilPage = () => {
             bgColor: '#333',
             color: '#fff',
             loaderColor: '#fff',
-            sliderColor: '#1cb954',
+            sliderColor: '#0000FF',
             trackArtistColor: '#ccc',
             trackNameColor: '#fff',
             heigh: '100%'
           }}
           token={token}
-          uris={['spotify:artist:6HQYnRM4OzToCYPpVBInuU']}
+          uris={trackuri}
         />
       </div>
     </div>

@@ -10,18 +10,18 @@ import { useState } from 'react'
 const Research = () => {
     const [tracksearch,setTracksearch]=useState([])
 
-    const {spotify} = useContext(ObjetUsContext)
+    const {spotify,trackuri,setTrackuri} = useContext(ObjetUsContext)
    
     const searchTracks = (e)=>{
         const track = e.target.value
         spotify.searchTracks(track).then(res=>{
           console.log("ma chanson",res.tracks.items);
           setTracksearch(res.tracks.items)
-        //   console.log(res.tracks.items[0].name);
+          console.log("ma recherche",res.tracks.items[0].album);
         }).catch(err=>console.error(err))
     
       }
-      console.log("mes tracks" , tracksearch);
+    //   console.log("mes tracks" , tracksearch);
 
     return (
         <div className='mainmenu'>
@@ -37,7 +37,9 @@ const Research = () => {
                     <Cardsearch 
                      titretrack={data.name} 
                      artist={data.artists[0].name} 
-                     imagealbum={data.album.images[1].url}/>
+                     imagealbum={data.album.images[1].url}
+                     playTrack={()=>setTrackuri(data.uri)}
+                     />
                 )
               })}
                 

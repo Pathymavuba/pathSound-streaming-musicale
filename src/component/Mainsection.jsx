@@ -12,16 +12,10 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Mainsection = () => {
-  const {artistName,newsong,token,spotify} = useContext(ObjetUsContext)
+  const {artistName,newsong,token,spotify,trackuri,setTrackuri} = useContext(ObjetUsContext)
   const [seemoremadeforyou,setSeemoremadeforyou]=useState(true)
   const [seemorerecentlyplayed,setSeemorerecentlyplayed]=useState(true)
-  const navigate = useNavigate()
   
-
-  
-  
- 
- 
 
 const handleSeemoremadeforyou = ()=>{
   setSeemoremadeforyou(!seemoremadeforyou)
@@ -31,9 +25,6 @@ const handleSeemorerecentlyplayed = ()=>{
 }
   return (
     <div className='mainmenu'>
-      {/* <div className="menu">
-          <input onChange={searchTracks} type="search" className='search' placeholder='search'/>
-      </div> */}
       <div className="allSongs">
       <div className="madeforyou">
         <h1 style={{fontWeight:'400'}}>MADE FOR YOU</h1>
@@ -43,7 +34,10 @@ const handleSeemorerecentlyplayed = ()=>{
           {newsong.map(data=>{
             return(
               <Cardmadeforyou  key={data.artists.id}
-              myartist={data.artists[0].name} titre={data.name} image={data.images[0].url}>
+              myartist={data.artists[0].name} titre={data.name} image={data.images[0].url}
+              playTrack={()=>setTrackuri(data.uri)}
+             >
+              
               </Cardmadeforyou>
               // myartist={data.albums.items.artists[0].name}
             )
@@ -59,7 +53,10 @@ const handleSeemorerecentlyplayed = ()=>{
         {artistName.map((data)=>{
           return(<Cardrecentlyplayed key={data.track.artists.id} titre={data.track.name} 
           image = {data.track.album.images[0].url}
-          monartiste={data.track.artists[0].name}>
+          monartiste={data.track.artists[0].name}
+          playTrack={()=>setTrackuri(data.track.uri)}
+          >
+          
           </Cardrecentlyplayed>)
         })} 
           </div>

@@ -3,7 +3,7 @@ import '../style/Card.css'
 import {BsFillPlayCircleFill } from "react-icons/bs";
 
 
-const Cardmadeforyou = ({titre,myartist,image}) => {
+const Cardmadeforyou = ({titre,myartist,image,playTrack}) => {
     const [showplay,setShowplay] = useState(false)
     const handleShowplay=()=>{setShowplay(true)}
     const handleHideplay=()=>{setShowplay(false)}
@@ -24,7 +24,7 @@ const Cardmadeforyou = ({titre,myartist,image}) => {
                 position:'relative',
                 top:'11rem',}}
              >{myartist}</h6>
-              <span className='playnow' onClick={handleplay} style={{cursor:'pointer'}}> {showplay && <BsFillPlayCircleFill  />}</span>
+              <span className='playnow' onClick={playTrack} style={{cursor:'pointer'}}> {showplay && <BsFillPlayCircleFill  />}</span>
     </div>
     </div>
   )
