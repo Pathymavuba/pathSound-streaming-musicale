@@ -39,8 +39,7 @@ const AccueilPage = () => {
   const [name, setName] = useState("")
   const [artistName, setArtistName] = useState([])
   const [newsong, setNewsong] = useState([])
-  const [initial, setInitial] = useState(true)
-  const [backhome, setBackhome] = useState(false)
+  const [backhome, setBackhome] = useState("home")
   const [trackuri,setTrackuri]=useState("")
   const [active,setActive]=useState("")
 
@@ -79,17 +78,20 @@ const AccueilPage = () => {
 
   }, [token])
 
+  const homeEvent = () => {
+    setActive("home")
+    setBackhome('home')
+   }
+
   const researchEvent = () => {
-    setBackhome(!backhome)
+    setBackhome('search')
     setActive('search')
 
   }
   const playlistEvent = ()=>{
     setActive("playlist")
   }
-  const homeEvent = () => {
-   setActive("home")
-  }
+  
 
   //se deconnecter
   const logout = () => {
@@ -110,7 +112,7 @@ const AccueilPage = () => {
          playlistEvent={playlistEvent}/>
 
         <ObjetUsContext.Provider value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri}}>
-        {backhome?<Outlet />:<Mainsection/>}
+        {(backhome=="home")?<Mainsection/> :<Outlet />}
         
         </ObjetUsContext.Provider>
         <Rightsection />
