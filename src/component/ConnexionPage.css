@@ -5,7 +5,7 @@
     --bleu:#0000FF;
 }
 .container{
-    background:url('/home/pathymavuba/Documents/Pathsound/src/img/unsplash_YrtFlrLo2DQ.png');
+    background:url('../img/unsplash_YrtFlrLo2DQ.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
