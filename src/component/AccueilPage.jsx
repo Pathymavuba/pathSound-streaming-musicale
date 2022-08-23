@@ -112,12 +112,15 @@ const AccueilPage = () => {
         <SpotifyPlayer
           styles={{
             activeColor: '#fff',
-            bgColor: '#333',
+            bgColor: '#030303',
             color: '#fff',
             loaderColor: '#fff',
             sliderColor: '#0000FF',
+            sliderHandleColor:'#020A05',
+            sliderTrackColor:'white',
             trackArtistColor: '#ccc',
             trackNameColor: '#fff',
+            trackArtistColor:'whitesmoke',
             heigh: '100%'
           }}
           token={token}
