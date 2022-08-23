@@ -11,7 +11,7 @@ const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent,active,pl
         <div className="myCompte">
             <div className="profil">
                 <img src={profil} alt="" />
-                <p style={{fontSize:'1rem'}}>{name}</p>
+                <p style={{fontSize:'1rem',marginTop:'.6rem'}}>{name}</p>
             </div>
             <div className="bordure"></div>
         </div>
