@@ -1,6 +1,6 @@
 import React from 'react'
 import './ConnexionPage.css'
-import Logo from '/home/pathymavuba/Documents/Pathsound/src/img/Listen to Music.png'
+import Logo from '../img/logo.png'
 
 
 

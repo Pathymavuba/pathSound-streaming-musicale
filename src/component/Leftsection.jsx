@@ -1,9 +1,7 @@
 import {React}from 'react'
 import '../style/Leftsection.css'
-// import profil from '/home/pathymavuba/Documents/Pathsound/src/img/WhatsApp Image 2022-08-07 at 13.12.19.jpeg'
 import { Link } from 'react-router-dom'
 import { ObjetUsContext } from './OjetUseContext'
-// import SpotifyPlayer from 'react-spotify-web-playback';
 
 const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent}) => {
   // const active = 

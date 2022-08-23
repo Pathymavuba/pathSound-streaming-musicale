@@ -1,5 +1,5 @@
 import React from 'react'
-import '/home/pathymavuba/Documents/Pathsound/src/style/Card.css'
+import '../style/Card.css'
 import { useState } from 'react'
 import {BsFillPlayCircleFill } from "react-icons/bs";
 
