@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect, useContext, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,Outlet } from 'react-router-dom'
 import axios from 'axios'
 import SpotifyWebAPi from 'spotify-web-api-js'
 import Leftsection from './Leftsection'
@@ -98,16 +98,9 @@ const AccueilPage = () => {
   return (
     <div >
       <div className='accueil'>
-        {/* <Link to='/'><button onClick={logout}>Se deconnecter</button> </Link> */}
         <Leftsection logout={logout} profil={profil} name={name} token={token} researchEvent={researchEvent} />
-        {/* <Mainsection artistName={artistName}/> */}
         <ObjetUsContext.Provider value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri}}>
-          {initial ? <Mainsection /> : <Research />}
-          {/* {backhome & <Mainsection/>} */}
-          {/* <Routes>
-        <Route path='/accueil' element={<Mainsection/>}/>
-        <Route path='/accueil/search' element={<Research />}/>
-       </Routes> */}
+          <Outlet />
         </ObjetUsContext.Provider>
         <Rightsection />
 
