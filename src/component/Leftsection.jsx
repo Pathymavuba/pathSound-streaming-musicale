@@ -1,10 +1,10 @@
-import {React}from 'react'
+import {React, useContext}from 'react'
 import '../style/Leftsection.css'
 import { Link } from 'react-router-dom'
 import { ObjetUsContext } from './OjetUseContext'
 
-const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent}) => {
-  // const active = 
+const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent,active,playlistEvent}) => {
+ 
   
   return (
     <div className='leftmenu'>
@@ -19,12 +19,26 @@ const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent}) => {
             <div className='yourlibrary'>
             <h3 style={{fontSize:'1.4rem'}}>YOUR LIBRARY</h3>
             <Link  style={{textDecoration:'none'}}  to='/accueil/home'> 
-             <h6 onClick={homeEvent}>Home</h6> </Link> 
+             <h6 onClick={homeEvent} 
+             style={(active=="home")?{color:'white',fontSize:'1rem',opacity:1,
+             cursor:"pointer"}:
+             {color:'white',fontSize:'1rem',opacity:0.6,
+             cursor:"pointer"}}>
+              Home</h6> 
+              </Link> 
              
-            <Link style={{textDecoration:'none'}}  to='/accueil/search'>  <h6  onClick={researchEvent}>Research</h6> </Link>
+            <Link style={{textDecoration:'none'}}  to='/accueil/search'>  
+            <h6  onClick={researchEvent}  
+              style={(active=="search")?{color:'white',fontSize:'1rem',opacity:1,
+              cursor:"pointer"}:{color:'white',fontSize:'1rem',opacity:0.6,
+              cursor:"pointer"}} >Research</h6> </Link>
              
             
-             <h6>Playlists</h6>
+             <h6
+             onClick={playlistEvent}
+             style={(active=="playlist")?{color:'white',fontSize:'1rem',opacity:1,
+             cursor:"pointer"}:{color:'white',fontSize:'1rem',opacity:0.6,
+             cursor:"pointer"}} >Playlists</h6>
             </div>
              <div className="bordure"></div>
         </div>
@@ -32,20 +46,6 @@ const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent}) => {
             <Link style={{textDecoration:'none'}} to='/'> <h6  className='logout-btn' onClick={logout}>Logout</h6> </Link>
            
         </div>
-          {/* <SpotifyPlayer   styles={{
-    activeColor: '#fff',
-    bgColor: '#333',
-    color: '#fff',
-    loaderColor: '#fff',
-    sliderColor: '#1cb954',
-    trackArtistColor: '#ccc',
-    trackNameColor: '#fff',
-    width:'1px',
-    height:'1rem',
-  }}
-  token={token}
-  uris={['spotify:artist:6HQYnRM4OzToCYPpVBInuU']}
-/>; */}
     </div>
   )
 }

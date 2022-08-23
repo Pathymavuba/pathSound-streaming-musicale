@@ -42,6 +42,7 @@ const AccueilPage = () => {
   const [initial, setInitial] = useState(true)
   const [backhome, setBackhome] = useState(false)
   const [trackuri,setTrackuri]=useState("")
+  const [active,setActive]=useState("")
 
 
   console.log(trackuri);
@@ -80,10 +81,14 @@ const AccueilPage = () => {
 
   const researchEvent = () => {
     setBackhome(!backhome)
+    setActive('search')
 
   }
+  const playlistEvent = ()=>{
+    setActive("playlist")
+  }
   const homeEvent = () => {
-    setBackhome(!backhome)
+   setActive("home")
   }
 
   //se deconnecter
@@ -99,7 +104,10 @@ const AccueilPage = () => {
         profil={profil}
          name={name} 
          token={token} 
-         researchEvent={researchEvent}/>
+         researchEvent={researchEvent}
+         homeEvent={homeEvent}
+         active={active}
+         playlistEvent={playlistEvent}/>
 
         <ObjetUsContext.Provider value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri}}>
         {backhome?<Outlet />:<Mainsection/>}
