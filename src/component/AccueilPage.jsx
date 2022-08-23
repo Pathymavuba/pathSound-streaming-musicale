@@ -19,7 +19,6 @@ const spotify = new SpotifyWebAPi();
 
 const AccueilPage = () => {
   const [token, setToken] = useState("")
-  // const [genre, setGenre] = useState([])
   useEffect(() => {
     const hash = window.location.hash
     let token = window.localStorage.getItem("token")
@@ -39,12 +38,12 @@ const AccueilPage = () => {
   const [profil, setProfil] = useState([])
   const [name, setName] = useState("")
   const [artistName, setArtistName] = useState([])
-  const [albumImage, setAlbumImage] = useState([])
   const [newsong, setNewsong] = useState([])
-  const [newalbum, setNewalbum] = useState([])
   const [initial, setInitial] = useState(true)
   const [backhome, setBackhome] = useState(false)
   const [trackuri,setTrackuri]=useState("")
+
+
   console.log(trackuri);
 
   spotify.setAccessToken(token)
@@ -78,12 +77,9 @@ const AccueilPage = () => {
 
 
   }, [token])
-  // console.log(profil);
-  // console.log(artistName);
-  // console.log(newalbum);
 
   const researchEvent = () => {
-    setInitial(!initial)
+    setBackhome(!backhome)
 
   }
   const homeEvent = () => {
@@ -98,9 +94,16 @@ const AccueilPage = () => {
   return (
     <div >
       <div className='accueil'>
-        <Leftsection logout={logout} profil={profil} name={name} token={token} researchEvent={researchEvent} />
+        <Leftsection 
+        logout={logout} 
+        profil={profil}
+         name={name} 
+         token={token} 
+         researchEvent={researchEvent}/>
+
         <ObjetUsContext.Provider value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri}}>
-          <Outlet />
+        {backhome?<Outlet />:<Mainsection/>}
+        
         </ObjetUsContext.Provider>
         <Rightsection />
 

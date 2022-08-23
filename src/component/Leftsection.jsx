@@ -6,6 +6,7 @@ import { ObjetUsContext } from './OjetUseContext'
 // import SpotifyPlayer from 'react-spotify-web-playback';
 
 const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent}) => {
+  // const active = 
   
   return (
     <div className='leftmenu'>
@@ -19,7 +20,9 @@ const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent}) => {
         <div className="library">
             <div className='yourlibrary'>
             <h3 style={{fontSize:'1.4rem'}}>YOUR LIBRARY</h3>
-            <Link  style={{textDecoration:'none'}}  to='/accueil/home'>  <h6 onClick={homeEvent}>Home</h6> </Link> 
+            <Link  style={{textDecoration:'none'}}  to='/accueil/home'> 
+             <h6 onClick={homeEvent}>Home</h6> </Link> 
+             
             <Link style={{textDecoration:'none'}}  to='/accueil/search'>  <h6  onClick={researchEvent}>Research</h6> </Link>
              
             
