@@ -42,17 +42,25 @@ const AccueilPage = () => {
   const [backhome, setBackhome] = useState("home")
   const [trackuri,setTrackuri]=useState("")
   const [active,setActive]=useState("")
-
+  const [userId,setUserId]=useState("")
+  const [infoplaylist,setInfoplaylist]=useState([])
+  const [playlistId,setPlaylistId] = useState("")
+  const [play,setPlay]=useState(false)
+ 
 
   console.log(trackuri);
 
   spotify.setAccessToken(token)
+  useEffect(()=>{
+   setPlay(true)
+  },[trackuri])
 
   useEffect(() => {
     setTimeout(() => {
       //definition du jeton d'accès 
       spotify.getMe().then((res) => {
-        // console.log(res);
+        // console.log(res.id);
+        setUserId(res.id)
         setProfil(res.images[0].url);
         setName(res.display_name)
       }).catch(err => console.log(err))
@@ -77,6 +85,7 @@ const AccueilPage = () => {
 
 
   }, [token])
+  console.log(userId);
 
   const homeEvent = () => {
     setActive("home")
@@ -89,7 +98,11 @@ const AccueilPage = () => {
 
   }
   const playlistEvent = ()=>{
+    setBackhome('playlist')
     setActive("playlist")
+  }
+  const playlistdetailEvent = ()=>{
+    setBackhome('playlistdetail')
   }
   
 
@@ -109,9 +122,12 @@ const AccueilPage = () => {
          researchEvent={researchEvent}
          homeEvent={homeEvent}
          active={active}
-         playlistEvent={playlistEvent}/>
+         playlistEvent={playlistEvent}
+         playlistdetailEvent={playlistdetailEvent}/>
 
-        <ObjetUsContext.Provider value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri}}>
+        <ObjetUsContext.Provider 
+        value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri,userId,setInfoplaylist,
+        infoplaylist,playlistId,setPlaylistId}}>
         {(backhome=="home")?<Mainsection/> :<Outlet />}
         
         </ObjetUsContext.Provider>
@@ -135,6 +151,11 @@ const AccueilPage = () => {
           }}
           token={token}
           uris={trackuri}
+          callback={(pathie)=>{
+            !pathie.isPlaying ? setPlay(false) : setPlay(true)
+          }}
+          play={play}
+          autoplay={true}
         />
       </div>
     </div>

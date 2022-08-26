@@ -38,7 +38,6 @@ const handleSeemorerecentlyplayed = ()=>{
               myartist={data.artists[0].name} titre={data.name} image={data.images[0].url}
               playTrack={()=>setTrackuri(data.uri)}
              >
-              
               </Cardmadeforyou>
               // myartist={data.albums.items.artists[0].name}
             )

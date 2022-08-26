@@ -31,14 +31,14 @@ const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent,active,pl
             <h6  onClick={researchEvent}  
               style={(active=="search")?{color:'white',fontSize:'1rem',opacity:1,
               cursor:"pointer"}:{color:'white',fontSize:'1rem',opacity:0.6,
-              cursor:"pointer"}} >Research</h6> </Link>
-             
-            
-             <h6
+              cursor:"pointer"}} >Research</h6> </Link>   
+   <Link  style={{textDecoration:'none'}} to='/accueil/playlist'>
+   <h6
              onClick={playlistEvent}
              style={(active=="playlist")?{color:'white',fontSize:'1rem',opacity:1,
              cursor:"pointer"}:{color:'white',fontSize:'1rem',opacity:0.6,
              cursor:"pointer"}} >Playlists</h6>
+   </Link>  
             </div>
              <div className="bordure"></div>
         </div>
