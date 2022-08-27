@@ -187,5 +187,8 @@ margin-top:.5rem;
     .listsongs {
         flex-wrap: wrap;
     }
+    .madeforyo h1{
+     font-size:.2rem;
+    }
    
 }
