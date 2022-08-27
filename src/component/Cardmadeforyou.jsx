@@ -14,16 +14,9 @@ const Cardmadeforyou = ({titre,myartist,image,playTrack}) => {
     <div>  
           <div className='card' onMouseEnter={handleShowplay} onMouseLeave={handleHideplay}
           style={{backgroundImage:`url(${image})`}}>
-             <h6 style={{
-                fontSize:'.7rem',
-                position:'relative',
-                top:'10.5rem',}}>{titre}</h6>
-             <h6 style={{
-                fontSize:'.7rem',
-                fontWeight:'350',
-                position:'relative',
-                top:'11rem',}}
-             >{myartist}</h6>
+             <h6 >{titre}</h6>
+             <h5
+             >{myartist}</h5>
               <span className='playnow' onClick={playTrack} style={{cursor:'pointer'}}> {showplay && <BsFillPlayCircleFill  />}</span>
     </div>
     </div>

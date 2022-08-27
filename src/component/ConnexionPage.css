@@ -41,6 +41,11 @@ p{
     flex-direction:row;
     gap:0;
 }
+.logo h3{
+    margin-top:2.6rem;
+    font-size:2rem;
+     font-weight:400
+}
 button{
     width:12rem;
     height:3rem;
@@ -48,5 +53,48 @@ button{
     background-color:var(--bleu);
     font-size:1rem;
     font-weight:800;cursor: pointer;
-
+}
+/* ----------------------Responsives---------------------------------- */
+@media (max-width:415px){
+    .secondary-container{
+        gap:14rem;
+    }
+    .description{
+        gap:5rem;
+    }
+    .logo img{
+        width:4rem;
+        height:4rem;
+    }
+    .logo h3{
+        font-size:1.5rem;
+        margin-top:1.7rem;
+    }
+    p{
+        font-size:1.5rem;
+    }
+}
+@media (max-width:390px){
+    .secondary-container{
+        gap:12rem;
+    }
+    .description{
+        gap:3rem;
+    }
+    p{
+        font-size:1.2rem;
+    }
+    button{
+        width:9rem;
+        height:2rem;
+        font-size:0.7rem;
+    }
+    .logo img{
+        width:3rem;
+        height:3rem;
+    }
+    .logo h3{
+        font-size:1rem;
+        margin-top:1rem;
+    }
 }

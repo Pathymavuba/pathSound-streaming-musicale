@@ -179,3 +179,9 @@ margin-top:.5rem;
     flex-direction: column;
     gap:1rem;
 }
+/* ----------------------Responsives---------------------------------- */
+@media (max-width:415px){
+    .mainmenu{
+      width:82%;
+    }
+}

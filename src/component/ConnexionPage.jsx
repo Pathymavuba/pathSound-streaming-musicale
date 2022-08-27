@@ -38,15 +38,14 @@ const ConnexionPage = () => {
       <div className="secondary-container">
         <div className="logo">
           <img src={Logo} alt="logo" />
-          <h3 style={{ marginTop:'2.6rem', fontSize:'2rem', fontWeight:'400' }}
-          >path<span style={{color:'#0000FF'}}>Sound</span></h3>
+          <h3 >path<span style={{color:'#0000FF'}}>Sound</span></h3>
         </div>
         <div className='description'>
           <p>Discover, stream  a constantly expanding mix of music <br />
             from emerging and major artists <br /> around the world.</p>
           <a href=
             {`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&scope=${scope.join('%20')}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&show_dialog=true`}> 
-            <button>Connect to pathsound</button> </a>
+            <button>Login with Spotify</button> </a>
         </div>
 
       </div>

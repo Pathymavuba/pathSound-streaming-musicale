@@ -11,13 +11,13 @@ const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent,active,pl
         <div className="myCompte">
             <div className="profil">
                 <img src={profil} alt="" />
-                <p style={{fontSize:'1rem',marginTop:'.6rem'}}>{name}</p>
+                <p>{name}</p>
             </div>
             <div className="bordure"></div>
         </div>
         <div className="library">
             <div className='yourlibrary'>
-            <h3 style={{fontSize:'1.4rem'}}>YOUR LIBRARY</h3>
+            <h3 >YOUR LIBRARY</h3>
             <Link  style={{textDecoration:'none'}}  to='/accueil/home'> 
              <h6 onClick={homeEvent} 
              style={(active=="home")?{color:'white',fontSize:'1rem',opacity:1,

@@ -12,3 +12,9 @@
 .mylogo{
     margin-top:.5rem;
 }
+/* ----------------------Responsives---------------------------------- */
+@media (max-width:415px){
+    .rightmenu{
+       display: none;
+    }
+}

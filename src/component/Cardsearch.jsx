@@ -13,16 +13,9 @@ const Cardsearch = ({imagealbum,titretrack,artist,playTrack}) => {
 <div className='card'>
     <div className='card' onMouseEnter={handleShowplay} onMouseLeave={handleHideplay}
 style={{backgroundImage:`url(${imagealbum})`}}>
-        <h6 style={{
-           fontSize:'.7rem',
-           position:'relative',
-           top:'10.5rem',}}>{titretrack}</h6>
-        <h6 style={{
-           fontSize:'.7rem',
-           fontWeight:'350',
-           position:'relative',
-           top:'11rem',}}
-        >{artist}</h6>
+        <h6>{titretrack}</h6>
+        <h5
+        >{artist}</h5>
         <span className='playnow' onClick={playTrack} style={{cursor:'pointer'}}> {showplay && <BsFillPlayCircleFill  />}</span>
      
         
