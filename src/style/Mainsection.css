@@ -184,4 +184,8 @@ margin-top:.5rem;
     .mainmenu{
       width:82%;
     }
+    .listsongs {
+        flex-wrap: wrap;
+    }
+   
 }

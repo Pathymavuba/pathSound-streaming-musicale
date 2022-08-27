@@ -18,3 +18,11 @@
     margin:0;
     z-index:1000;
 }
+
+/* ----------------------Responsives---------------------------------- */
+/* @media (max-width:415px){
+    .accueil{
+        display:flex;
+        flex-direction:column-reverse;
+    }
+} */
