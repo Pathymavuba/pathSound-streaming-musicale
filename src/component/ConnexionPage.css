@@ -57,7 +57,7 @@ button{
 /* ----------------------Responsives---------------------------------- */
 @media (max-width:415px){
     .secondary-container{
-        gap:14rem;
+        gap:13rem;
     }
     .description{
         gap:5rem;
