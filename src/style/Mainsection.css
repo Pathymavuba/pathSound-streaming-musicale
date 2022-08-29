@@ -182,13 +182,121 @@ margin-top:.5rem;
 /* ----------------------Responsives---------------------------------- */
 @media (max-width:415px){
     .mainmenu{
-      width:82%;
+      width:100%;
+      min-height:90%;
+      gap:0;
+      position: relative;
+    }
+    .secondmain{
+        min-height:90%;
+        width:100%;
+        gap:.8rem;
+    }
+    .allSongs{
+        position: relative;
+        top:4rem;
     }
     .listsongs {
         flex-wrap: wrap;
+        gap:2rem;
     }
-    .madeforyo h1{
-     font-size:.2rem;
+    .madeforyou{
+        width:100%;
+        gap:2;
+        margin-left:.5rem;
+        margin-top:1rem;
     }
-   
+    .madeforyou h1{
+     font-size:1.5rem;
+    }
+    .recentlyplayed{
+        width:100%;
+        gap:2;
+        margin-left:.5rem;
+        margin-top:1rem;
+    }
+    .recentlyplayed h1{
+        font-size:1.5rem; 
+    }
+    .menu{
+        margin-top:3rem;
+    }
+    .search{
+         width:20rem;
+     }
+    .seeMore{
+        width:100%;
+        column-gap:1rem;
+        margin-left:1rem;
+    }
+    .playlistTitre{
+        position: relative;
+        top:2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .playlist{
+        display:flex;
+        flex-direction:column;
+        align-items: center; 
+        gap:1rem;
+        margin-top:2.5rem;
+        overflow-y: scroll;
+    }
+    .cover{
+        width:97%;
+        height:30vh;
+        overflow: hidden;
+        margin-top:3rem;
+        position: relative;
+        top:1rem;
+        margin-left:auto;
+        margin-right: auto;
+        border-radius:1rem;
+        
+    }
+}
+@media (max-width:390px){
+    .mainmenu{
+        width:100%;
+        min-height:90%;
+        gap:0;
+        position: relative;
+      }
+      .listsongs {
+        flex-wrap: wrap;
+        column-gap:5rem;
+        row-gap:2.5rem;
+        margin-left:1.8rem;
+    }
+    .madeforyou{
+        gap:0rem;
+    }
+    .madeforyou h1{
+        font-size:1rem;
+       }
+       .recentlyplayed h1{
+        font-size:1rem; 
+    }
+    .recentlyplayed{
+        gap:0rem;
+    }
+    .search{
+        width:15rem;
+    }
+    .seeMore{
+        column-gap:.5rem;
+        margin-left:.3rem;
+    }
+    .playlist{
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center; 
+        gap:1rem;
+        margin-top:2.5rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
 }

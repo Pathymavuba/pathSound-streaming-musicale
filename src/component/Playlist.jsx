@@ -20,7 +20,7 @@ const Playlist = () => {
   
   return (
     <div className="mainmenu">
- <h1 style={{fontWeight:'400',marginTop:'2.3rem',marginLeft:'2rem'}}>Playlist</h1>
+ <h1 className="playlistTitre"style={{fontWeight:'400',marginTop:'2.3rem',marginLeft:'2rem'}}>Playlist</h1>
       <div className='playlist' style={{marginLeft:'2rem'}}>
       {infoplaylist.map(data=>{
         return(

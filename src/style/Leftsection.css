@@ -91,40 +91,53 @@ opacity:1;
 /* ----------------------Responsives---------------------------------- */
 @media (max-width:415px){
     .leftmenu{
-        gap:4rem;
-        width:30%;
+        width:100%;
+        flex-direction: row;
+        min-height:15%;
     }
     .profil{
-        display:flex;
-        flex-direction:column;
-    }
-    .profil img{
-        width:30px;
-        height:30px;
-        margin-left:1rem;
-    }
-    .profil p{
-        font-size:.5rem;
-        margin-right:3rem;
+        display:none;
     }
     .bordure{
-        left:.3rem;
+        display:none;
+    }
+    .library{
+        flex-direction:row;
     }
     .yourlibrary{
-        margin-left:.6rem;
+       flex-direction: row;
+       align-items: center;
+       /* margin-right:10rem; */
+
     }
     .yourlibrary h3{
-        font-size:.8rem;
+        display:none;
     }
     .home{
-        flex-direction:row;
+        flex-direction:column;
+        position:relative;
+        bottom:1.5rem;
+        right:1.5rem;
+    }
+    h6 span{
+        position: relative;
+        right:.7rem;
+    }
+ 
+    .logout-btn{
+        flex-direction:column;
+        position: relative;
+        right:1.5rem;
+        top:1.1rem;
+    }
+    .logout-btn h6 span{
+        position: relative;
+        right:.7rem;
     }
     /* .home span{
         display: none;
     } */
-    .logout-btn{
-        margin-left:.8rem;
-    }
+  
 }
 @media (max-width:390px){
     .yourlibrary h3{
@@ -132,9 +145,26 @@ opacity:1;
         margin-left: auto;
         margin-right: auto;
     }
+    .yourlibrary{
+        gap:3.4rem;
+    }
     .home{
         flex-direction:column;
         gap:.2rem;
-        align-items:center;
+        /* align-items:center; */
+
+    }
+    .home span{
+        display: none;
+    }
+    .home{
+        position: relative;
+        right:.5rem;
+    }
+    .logout-btn{
+        flex-direction:column;
+        position: relative;
+        left:1.2rem;
+        top:1.1rem;
     }
 }

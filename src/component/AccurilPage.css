@@ -20,9 +20,10 @@
 }
 
 /* ----------------------Responsives---------------------------------- */
-/* @media (max-width:415px){
+@media (max-width:415px){
     .accueil{
         display:flex;
         flex-direction:column-reverse;
     }
-} */
+    
+}

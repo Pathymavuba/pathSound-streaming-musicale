@@ -30,7 +30,7 @@ const Research = () => {
       </div>
           <div className="allSongs">
           <div className="madeforyou">
-            <h1 style={{fontWeight:'400'}}>RESULT OF SONGS</h1>
+            <h1 className="resultSong" style={{fontWeight:'400'}}>RESULT OF SONGS</h1>
             <div className="seeMore">
               {tracksearch.map(data=>{
                 return(
