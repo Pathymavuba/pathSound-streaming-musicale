@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/Card.css'
+import '../styles/Card.css'
 import { useState } from 'react'
 import {BsFillPlayCircleFill } from "react-icons/bs";
 

@@ -1,5 +1,5 @@
 import {React, useContext}from 'react'
-import '../style/Leftsection.css'
+import '../styles/Leftsection.css'
 import { Link } from 'react-router-dom'
 import { ObjetUsContext } from './OjetUseContext'
 import { AiOutlineHome,AiOutlineSearch} from "react-icons/ai";

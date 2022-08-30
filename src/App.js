@@ -1,11 +1,11 @@
-import './App.css';
-import ConnexionPage from './component/ConnexionPage';
+import './styles/App.css';
+import ConnexionPage from './components/ConnexionPage';
 import {Routes,Route} from 'react-router-dom'
-import AccueilPage from './component/AccueilPage';
-import Mainsection from './component/Mainsection';
-import Research from './component/Research';
-import Playlist from './component/Playlist';
-import PlaylistDetails from './component/PlaylistDetails';
+import AccueilPage from './components/AccueilPage';
+import Mainsection from './components/Mainsection';
+import Research from './components/Research';
+import Playlist from './components/Playlist';
+import PlaylistDetails from './components/PlaylistDetails';
 
 function App() {
  

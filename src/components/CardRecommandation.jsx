@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/Card.css'
+import '../styles/Card.css'
 import { AiFillPlayCircle } from "react-icons/ai";
 import { FaPlayCircle} from "react-icons/fa";
 import {BsFillPlayCircleFill } from "react-icons/bs";

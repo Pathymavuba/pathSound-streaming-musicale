@@ -1,5 +1,5 @@
 import {React,useState} from 'react'
-import '../style/Card.css'
+import '../styles/Card.css'
 import {BsFillPlayCircleFill } from "react-icons/bs";
 
 
@@ -7,9 +7,6 @@ const Cardmadeforyou = ({titre,myartist,image,playTrack}) => {
     const [showplay,setShowplay] = useState(false)
     const handleShowplay=()=>{setShowplay(true)}
     const handleHideplay=()=>{setShowplay(false)}
-    const handleplay = ()=>{
-     console.log('pour jouer');
-  }
   return (
     <div>  
           <div className='card' onMouseEnter={handleShowplay} onMouseLeave={handleHideplay}

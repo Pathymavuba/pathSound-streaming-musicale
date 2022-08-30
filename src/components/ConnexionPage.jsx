@@ -1,6 +1,6 @@
 import React from 'react'
-import './ConnexionPage.css'
-import Logo from '../img/logo.png'
+import '../styles/ConnexionPage.css'
+import Logo from '../images/logo.png'
 
 // https://path-sound-web.vercel.app/accueil
 // http://localhost:3000/accueil
@@ -8,8 +8,8 @@ import Logo from '../img/logo.png'
 const ConnexionPage = () => {
   //Variables de lien d'authentification
   const CLIENT_ID = "7e483ea79bf446788e05e4807c5039a8"
-  // const REDIRECT_URI = "http://localhost:3000/accueil"
-  const REDIRECT_URI = "https://path-sound-web.vercel.app/accueil"
+  const REDIRECT_URI = "http://localhost:3000/accueil"
+  // const REDIRECT_URI = "https://path-sound-web.vercel.app/accueil"
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
   const RESPONSE_TYPE = "token"
   const scope = [

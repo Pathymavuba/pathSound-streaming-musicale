@@ -1,6 +1,6 @@
 import {React,useEffect,useState,useContext} from 'react'
 import { ObjetUsContext } from './OjetUseContext'
-import '../style/Mainsection.css'
+import '../styles/Mainsection.css'
 import { BsFillPlayFill } from "react-icons/bs";
 
 const PlaylistDetails = () => {

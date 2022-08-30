@@ -1,6 +1,6 @@
 import React from 'react'
-import '../style/Rightsection.css'
-import  Logo from '../img/logo.png'
+import '../styles/Rightsection.css'
+import  Logo from '../images/logo.png'
 
 const Rightsection = () => {
   return (

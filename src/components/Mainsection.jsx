@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import '../style/Mainsection.css'
+import '../styles/Mainsection.css'
 import Cardmadeforyou from './Cardmadeforyou'
 import Cardplaylist from './Cardplaylist'
 import Cardrecentlyplayed from './Cardrecentlyplayed'

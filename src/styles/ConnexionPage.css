@@ -5,7 +5,7 @@
     --bleu:#0000FF;
 }
 .container{
-    background:url('../img/unsplash_YrtFlrLo2DQ.png');
+    background:url('../images/unsplash_YrtFlrLo2DQ.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
@@ -53,6 +53,7 @@ button{
     background-color:var(--bleu);
     font-size:1rem;
     font-weight:800;cursor: pointer;
+    border: none;
 }
 /* ----------------------Responsives---------------------------------- */
 @media (max-width:415px){

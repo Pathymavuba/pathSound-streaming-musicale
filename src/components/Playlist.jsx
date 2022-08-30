@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './AccurilPage.css'
-import '../style/Mainsection.css'
+import '../styles/AccueilPage.css'
+import '../styles/Mainsection.css'
 import Cardplaylist from './Cardplaylist'
 import { useContext } from 'react'
 import { ObjetUsContext } from './OjetUseContext'
