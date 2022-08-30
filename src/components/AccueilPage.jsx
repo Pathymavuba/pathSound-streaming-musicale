@@ -46,7 +46,9 @@ const AccueilPage = () => {
   const [infoplaylist,setInfoplaylist]=useState([])
   const [playlistId,setPlaylistId] = useState("")
   const [play,setPlay]=useState(false)
+  const  [isLoading,seIsLoading]=useState(true)
  
+  console.log(isLoading);
 
   console.log(trackuri);
 
@@ -67,6 +69,7 @@ const AccueilPage = () => {
       spotify.getMyRecentlyPlayedTracks().then(res => {
         // console.log(res);
         setArtistName(res.items)
+        seIsLoading(false)
       })
         .catch(err => console.log(err))
 
@@ -81,7 +84,8 @@ const AccueilPage = () => {
       })
 
 
-    }, 2000)
+    },1000)
+    console.log(isLoading);
 
 
   }, [token])
@@ -126,7 +130,7 @@ const AccueilPage = () => {
          playlistdetailEvent={playlistdetailEvent}/>
 
         <ObjetUsContext.Provider 
-        value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri,userId,setInfoplaylist,
+        value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri,userId,setInfoplaylist,isLoading,seIsLoading,
         infoplaylist,playlistId,setPlaylistId}}>
         {(backhome=="home")?<Mainsection/> :<Outlet />}
         
