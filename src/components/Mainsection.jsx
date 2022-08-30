@@ -39,7 +39,7 @@ const handleSeemorerecentlyplayed = ()=>{
               playTrack={()=>setTrackuri(data.uri)}
              >
               </Cardmadeforyou>
-              // myartist={data.albums.items.artists[0].name}
+
             )
           })}
           
