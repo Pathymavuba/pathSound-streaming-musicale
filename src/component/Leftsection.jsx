@@ -52,7 +52,7 @@ const Leftsection = ({logout,profil,name,researchEvent,token,homeEvent,active,pl
         <div className="logout">
             <Link style={{textDecoration:'none'}} to='/'> <h6  className='logout-btn' 
             onClick={logout}> <BiLogIn style={{position:'relative',bottom:'.4rem',fontSize:'1.5rem'}}/>
-            <span>Logout</span> </h6> </Link>
+            <span className='out'>Logout</span> </h6> </Link>
            
         </div>
     </div>

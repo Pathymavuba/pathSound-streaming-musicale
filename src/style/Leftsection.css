@@ -152,7 +152,6 @@ opacity:1;
         flex-direction:column;
         gap:.2rem;
         /* align-items:center; */
-
     }
     .home span{
         display: none;
@@ -166,5 +165,8 @@ opacity:1;
         position: relative;
         left:1.2rem;
         top:1.1rem;
+    }
+    .out{
+        display: none;
     }
 }

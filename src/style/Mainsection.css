@@ -256,6 +256,15 @@ margin-top:.5rem;
         
     }
 }
+@media (max-width:415px){
+    .listsongs {
+        flex-wrap: wrap;
+        column-gap:.3rem;
+        row-gap:2.5rem;
+        margin-left:1rem;
+    }
+
+}
 @media (max-width:390px){
     .mainmenu{
         width:100%;
@@ -265,9 +274,9 @@ margin-top:.5rem;
       }
       .listsongs {
         flex-wrap: wrap;
-        column-gap:5rem;
+        column-gap:.3rem;
         row-gap:2.5rem;
-        margin-left:1.8rem;
+        margin-left:.4rem;
     }
     .madeforyou{
         gap:0rem;
@@ -299,4 +308,12 @@ margin-top:.5rem;
         overflow-x: hidden;
     }
     
+}
+@media (max-width:360px){
+    .listsongs {
+        flex-wrap: wrap;
+        column-gap:.3rem;
+        row-gap:2.5rem;
+        margin-left:0rem;
+    }
 }

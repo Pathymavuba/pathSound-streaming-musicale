@@ -2,7 +2,6 @@ import './App.css';
 import ConnexionPage from './component/ConnexionPage';
 import {Routes,Route} from 'react-router-dom'
 import AccueilPage from './component/AccueilPage';
-import Album from './component/Album';
 import Mainsection from './component/Mainsection';
 import Research from './component/Research';
 import Playlist from './component/Playlist';
