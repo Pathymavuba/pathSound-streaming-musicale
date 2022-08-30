@@ -2,9 +2,6 @@ import React from 'react'
 import '../styles/ConnexionPage.css'
 import Logo from '../images/logo.png'
 
-// https://path-sound-web.vercel.app/accueil
-// http://localhost:3000/accueil
-
 const ConnexionPage = () => {
   //Variables de lien d'authentification
   const CLIENT_ID = "7e483ea79bf446788e05e4807c5039a8"
