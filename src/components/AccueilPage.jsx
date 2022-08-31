@@ -46,9 +46,8 @@ const AccueilPage = () => {
   const [infoplaylist,setInfoplaylist]=useState([])
   const [playlistId,setPlaylistId] = useState("")
   const [play,setPlay]=useState(false)
+  const  [isLoading,seIsLoading]=useState(true)
  
-
-  console.log(trackuri);
 
   spotify.setAccessToken(token)
   useEffect(()=>{
@@ -59,29 +58,26 @@ const AccueilPage = () => {
     setTimeout(() => {
       //definition du jeton d'accès 
       spotify.getMe().then((res) => {
-        // console.log(res.id);
         setUserId(res.id)
         setProfil(res.images[0].url);
         setName(res.display_name)
       }).catch(err => console.log(err))
       spotify.getMyRecentlyPlayedTracks().then(res => {
-        // console.log(res);
         setArtistName(res.items)
+        seIsLoading(false)
       })
         .catch(err => console.log(err))
 
       spotify.getNewReleases().then((res) => {
-        // console.log(res);
+       
         setNewsong(res.albums.items)
-        //  console.log("nouveau",res.albums.items);
 
       })
       spotify.getAlbums().then((res) => {
-        // console.log(res);
       })
 
 
-    }, 2000)
+    },0)
 
 
   }, [token])
@@ -126,7 +122,7 @@ const AccueilPage = () => {
          playlistdetailEvent={playlistdetailEvent}/>
 
         <ObjetUsContext.Provider 
-        value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri,userId,setInfoplaylist,
+        value={{ artistName, newsong, token, logout, profil, name, spotify,trackuri,setTrackuri,userId,setInfoplaylist,isLoading,seIsLoading,
         infoplaylist,playlistId,setPlaylistId}}>
         {(backhome=="home")?<Mainsection/> :<Outlet />}
         
