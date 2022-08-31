@@ -48,9 +48,6 @@ const AccueilPage = () => {
   const [play,setPlay]=useState(false)
   const  [isLoading,seIsLoading]=useState(true)
  
-  console.log(isLoading);
-
-  console.log(trackuri);
 
   spotify.setAccessToken(token)
   useEffect(()=>{
@@ -61,31 +58,26 @@ const AccueilPage = () => {
     setTimeout(() => {
       //definition du jeton d'accès 
       spotify.getMe().then((res) => {
-        // console.log(res.id);
         setUserId(res.id)
         setProfil(res.images[0].url);
         setName(res.display_name)
       }).catch(err => console.log(err))
       spotify.getMyRecentlyPlayedTracks().then(res => {
-        // console.log(res);
         setArtistName(res.items)
         seIsLoading(false)
       })
         .catch(err => console.log(err))
 
       spotify.getNewReleases().then((res) => {
-        // console.log(res);
+       
         setNewsong(res.albums.items)
-        //  console.log("nouveau",res.albums.items);
 
       })
       spotify.getAlbums().then((res) => {
-        // console.log(res);
       })
 
 
-    },1000)
-    console.log(isLoading);
+    },0)
 
 
   }, [token])

@@ -22,9 +22,9 @@ const Playlist = () => {
     <div className="mainmenu">
  <h1 className="playlistTitre"style={{fontWeight:'400',marginTop:'2.3rem',marginLeft:'2rem'}}>Playlist</h1>
       <div className='playlist' style={{marginLeft:'2rem'}}>
-      {infoplaylist.map(data=>{
+      {infoplaylist.map((data,index)=>{
         return(
-          <Cardplaylist getIdplaylist={()=>setPlaylistId(data.id)} nameplaylist={data.name} imageplaylist={ data.images.length !==0 ? data.images[0].url : {img}} 
+          <Cardplaylist key={index} getIdplaylist={()=>setPlaylistId(data.id)} nameplaylist={data.name} imageplaylist={ data.images.length !==0 ? data.images[0].url : {img}} 
           user={data.owner.display_name}/>
         )
       })}

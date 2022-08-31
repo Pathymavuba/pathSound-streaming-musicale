@@ -16,12 +16,6 @@ const Mainsection = () => {
   const [seemorerecentlyplayed,setSeemorerecentlyplayed]=useState(true)
  
   
-  
-// // useEffect(()=>{
-// //   setTimeout(()=>{
-// //     seIsLoading(false)
-// //   },1000)
-// },[Mainsection])
 const handleSeemoremadeforyou = ()=>{
   setSeemoremadeforyou(!seemoremadeforyou)
 }
@@ -31,7 +25,7 @@ const handleSeemorerecentlyplayed = ()=>{
   return (
     <div className='mainmenu'>
 
-{isLoading ? <ReactLoading type="bubbles" color='red' height={667} width={375}  /> : (
+{isLoading ? <ReactLoading className="loader" type="spokes" color='white' height={467} width={175}  /> : (
   <div className="allSongs">
       
   <div className="madeforyou">
@@ -40,9 +34,9 @@ const handleSeemorerecentlyplayed = ()=>{
         {seemoremadeforyou?"See more...":"See less"}</span>
         
     <div className={seemoremadeforyou?"listsongs":'seeMore'}>
-      {newsong.map(data=>{
+      {newsong.map((data,index)=>{
         return(
-          <Cardmadeforyou  key={data.artists.id}
+          <Cardmadeforyou  key={index}
           myartist={data.artists[0].name} titre={data.name} image={data.images[0].url}
           playTrack={()=>setTrackuri(data.uri)}
          >
@@ -58,8 +52,8 @@ const handleSeemorerecentlyplayed = ()=>{
     <span style={{marginLeft:'53rem',cursor:'pointer'}} onClick={handleSeemorerecentlyplayed } >
       {seemorerecentlyplayed?"See more...":"See less"}</span>
     <div className={seemorerecentlyplayed?"listsongs":'seeMore'}>
-    {artistName.map((data)=>{
-      return(<Cardrecentlyplayed key={data.track.artists.id} titre={data.track.name} 
+    {artistName.map((data,index)=>{
+      return(<Cardrecentlyplayed key={index} titre={data.track.name} 
       image = {data.track.album.images[0].url}
       monartiste={data.track.artists[0].name}
       playTrack={()=>setTrackuri(data.track.uri)}
