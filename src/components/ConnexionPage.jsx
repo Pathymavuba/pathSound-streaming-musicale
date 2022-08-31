@@ -3,12 +3,6 @@ import '../styles/ConnexionPage.css'
 import Logo from '../images/logo.png'
 
 const ConnexionPage = () => {
-  //Variables de lien d'authentification
-  const CLIENT_ID = "7e483ea79bf446788e05e4807c5039a8"
-  // const REDIRECT_URI = "http://localhost:3000/accueil"
-  const REDIRECT_URI = "https://path-sound-web.vercel.app/accueil"
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
-  const RESPONSE_TYPE = "token"
   const scope = [
     "user-read-email",
     "ugc-image-upload",
@@ -30,7 +24,19 @@ const ConnexionPage = () => {
      "user-follow-modify",
       "user-follow-read",
   ]
+  let redirect_uri = (process.env.REACT_APP_REDIRECT_URI_DEVELOP)
+  let auth_endpoint = (process.env.REACT_APP_AUTH_ENDPOINT )
+  let client_id = (process.env.REACT_APP_CLIENT_ID )
+  let response_type = (process.env.REACT_APP_RESPONSE_TYPE)
+ 
 
+ 
+  // {process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_MODE : process.env.REACT_APP_PRO_MODE}
+  if(process.env.NODE_ENV ==='production'){
+    redirect_uri = (process.env.REACT_APP_REDIRECT_URI_PRODUCTION)
+  }
+
+ 
   return (
     <div className='container'>
       <div className="secondary-container">
@@ -42,7 +48,7 @@ const ConnexionPage = () => {
           <p>Discover, stream  a constantly expanding mix of music <br />
             from emerging and major artists <br /> around the world.</p>
           <a href=
-            {`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&scope=${scope.join('%20')}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&show_dialog=true`}> 
+            {`${auth_endpoint}?client_id=${client_id}&scope=${scope.join('%20')}&redirect_uri=${redirect_uri}&response_type=${response_type}&show_dialog=true`}> 
             <button>Login with Spotify</button> </a>
         </div>
 

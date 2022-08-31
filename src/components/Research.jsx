@@ -5,23 +5,29 @@ import '../styles/Mainsection.css'
 import { ObjetUsContext } from './OjetUseContext'
 import { useContext } from 'react'
 import { useState } from 'react'
+import ReactLoading from 'react-loading';
 
 
 const Research = () => {
     const [tracksearch,setTracksearch]=useState([])
 
-    const {spotify,trackuri,setTrackuri} = useContext(ObjetUsContext)
-   
+    const {spotify,setTrackuri} = useContext(ObjetUsContext)
+    const [printOfResult,setPrintOfResult]=useState(true)
+    
     const searchTracks = (e)=>{
         const track = e.target.value
+        if(track !== ""){
+          setPrintOfResult(false)
+        }
+       
         spotify.searchTracks(track).then(res=>{
-          console.log("ma chanson",res.tracks.items);
           setTracksearch(res.tracks.items)
-          console.log("ma recherche",res.tracks.items[0].album);
         }).catch(err=>console.error(err))
+        
     
       }
-    //   console.log("mes tracks" , tracksearch);
+      console.log("pathy",printOfResult);
+     
 
     return (
         <div className='mainmenu'>
@@ -29,12 +35,15 @@ const Research = () => {
           <input onChange={searchTracks} type="search" className='search' placeholder='search'/>
       </div>
           <div className="allSongs">
-          <div className="madeforyou">
+          {printOfResult ? "":(
+            <div className="madeforyou">
+            
             <h1 className="resultSong" style={{fontWeight:'400'}}>RESULT OF SONGS</h1>
             <div className="seeMore">
-              {tracksearch.map(data=>{
+              {tracksearch.map((data,index)=>{
                 return(
                     <Cardsearch 
+                     key={index}
                      titretrack={data.name} 
                      artist={data.artists[0].name} 
                      imagealbum={data.album.images[1].url}
@@ -46,6 +55,9 @@ const Research = () => {
                   
               </div>
             </div>
+
+          )}
+          
 
 
           </div>
