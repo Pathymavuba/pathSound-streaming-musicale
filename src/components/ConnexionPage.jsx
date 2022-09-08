@@ -31,7 +31,6 @@ const ConnexionPage = () => {
  
 
  
-  // {process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_MODE : process.env.REACT_APP_PRO_MODE}
   if(process.env.NODE_ENV ==='production'){
     redirect_uri = (process.env.REACT_APP_REDIRECT_URI_PRODUCTION)
   }
